@@ -1,0 +1,187 @@
+<!--2nd Design-->
+<html>
+<title>SportsFeed</title>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+<style>
+#write
+{
+	position:fixed; 
+	visibility:hidden;
+}
+.mbx
+{
+	width:100%;
+	height:90%;
+}
+.spc
+{
+	float:left;
+	height:90%;
+	width:2%;
+	
+	opacity:0.1;
+}
+.rects
+{
+	float:left;
+	height:90%;
+	width:12%;
+	background-color:#666;
+	
+}
+.transp
+{
+	height:100%;
+	width:100%;
+	background-color:#FFF;
+	opacity:0.5;
+}
+.wrt
+{
+	font-family:jerseyLetters;
+	font-weight:bold;	
+}
+.rects:hover{
+	-webkit-animation:scl 2s ;
+	-webkit-animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes scl{
+	0%   {-webkit-transform:scale(1,1);
+	}
+	100% {-webkit-transform:scale(1.1,1.1)}
+	
+}
+.transp:hover{
+  -webkit-animation:trsp 2s;
+  -webkit-animation-iteration-count:1;
+  -webkit-animation-fill-mode:forwards;
+  
+}
+
+@-webkit-keyframes trsp{
+	0%  {opacity:0.5;}
+  100%  {opacity:0}
+}
+
+
+</style>
+<script>
+
+var xvar;
+var vyar;
+var chk;
+document.addEventListener("mousemove",function(e){
+	xvar=e.clientX||e.pageX;
+	vyar=e.clientY||e.pageY;
+	
+	chk = document.elementFromPoint(xvar, vyar);
+	
+	for(var i=0;i<7;i++)
+	{
+	    if(document.getElementsByClassName("transp").item(i)==chk)
+	    {
+	     var par=chk.parentNode;
+	    	
+	     if((par.children[0]))
+	     {
+		 var chld=par.children[0];
+		 chld.style.visibility="visible";
+	     }
+		}
+		else
+	    { 
+		 var par=document.getElementsByClassName("transp").item(i).parentNode;
+	     par.children[0];
+		
+	     if((par.children[0].getAttribute('id'))=="write")
+	     {
+		 var chld=par.children[0];
+		 chld.style.visibility="hidden";
+	     }
+		
+			 
+		}
+	
+	
+	}
+});
+
+</script>
+<body background="Index/bck-1.jpg">
+
+<div id="container" class="mbx">
+
+<div class="spc"></div>
+
+<a href="Football/" style="text-decoration:none">
+<div class="rects" style=" background-image:url(Index/fbl2.jpg)">
+<div id="write">
+<img src="Index/fbl_1.jpg"/>
+</div>
+<div class="transp"></div>
+</div>
+</a>
+
+<div class="spc"></div>
+
+<div class="rects" style="background-image:url(Index/bd1.jpg)">
+<div id="write" >
+<img src="Index/bdm_1.jpg"/></div>
+<div class="transp"></div>
+</div>
+
+<div class="spc"></div>
+
+<div class="rects" style="background-image:url(Index/vb1.jpg)">
+<div id="write" >
+<img src="Index/vbl_1.jpg">
+</div>
+<div class="transp"></div>
+</div>
+
+<div class="spc"></div>
+
+<div class="rects" style="background-image:url(Index/cric1.jpg)">
+<div id="write" >
+<img src="Index/crc_1.jpg">
+</div>
+<div class="transp"></div>
+</div>
+
+<div class="spc"></div>
+
+<div class="rects" style="background-image:url(Index/hb1.jpg)">
+<div id="write" >
+<img src="Index/hbl_1.jpg">
+</div>
+<div class="transp"></div>
+</div>
+
+<div class="spc"></div>
+
+<div class="rects" style="background-image:url(Index/hk1.jpg)">
+<div id="write" >
+<img src="Index/hk_1.jpg">
+</div>
+<div class="transp"></div>
+</div>
+
+<div class="spc"></div>
+
+<div class="rects" style="background-image:url(Index/bb1.jpg)">
+<div id="write" >
+<img  src="Index/bbl_1.jpg">
+</div>
+<div class="transp"></div>
+</div>
+
+<div class="spc"></div>
+
+</div>
+
+</body>
+</html>
